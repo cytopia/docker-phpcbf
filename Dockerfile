@@ -1,5 +1,5 @@
 ARG PHP
-FROM php:7.3 as builder
+FROM php:7.4 as builder
 
 # Install build dependencies
 RUN set -eux \
