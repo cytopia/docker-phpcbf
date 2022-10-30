@@ -42,7 +42,7 @@
 View **[Dockerfiles](https://github.com/cytopia/docker-phpcbf/blob/master/Dockerfiles/)** on GitHub.
 
 
-[![Docker hub](http://dockeri.co/image/cytopia/phpcbf?&kill_cache=1)](https://hub.docker.com/r/cytopia/phpcbf)
+**Available Architectures:**  `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6`
 
 Tiny Alpine-based multistage-builld dockerized version of [phpcbf](https://github.com/squizlabs/PHP_CodeSniffer)<sup>[1]</sup>.
 The image is built nightly against multiple stable versions and pushed to Dockerhub.
