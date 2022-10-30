@@ -1,18 +1,20 @@
 # Docker image for `phpcbf`
 
-[![Build Status](https://travis-ci.com/cytopia/docker-phpcbf.svg?branch=master)](https://travis-ci.com/cytopia/docker-phpcbf)
 [![Tag](https://img.shields.io/github/tag/cytopia/docker-phpcbf.svg)](https://github.com/cytopia/docker-phpcbf/releases)
-[![](https://images.microbadger.com/badges/version/cytopia/phpcbf:latest.svg?&kill_cache=1)](https://microbadger.com/images/cytopia/phpcbf:latest "phpcbf")
-[![](https://images.microbadger.com/badges/image/cytopia/phpcbf:latest.svg?&kill_cache=1)](https://microbadger.com/images/cytopia/phpcbf:latest "phpcbf")
-[![](https://img.shields.io/docker/pulls/cytopia/phpcbf.svg)](https://hub.docker.com/r/cytopia/phpcbf)
 [![](https://img.shields.io/badge/github-cytopia%2Fdocker--phpcbf-red.svg)](https://github.com/cytopia/docker-phpcbf "github.com/cytopia/docker-phpcbf")
 [![License](https://img.shields.io/badge/license-MIT-%233DA639.svg)](https://opensource.org/licenses/MIT)
 
+[![lint](https://github.com/cytopia/docker-phpcbf/workflows/lint/badge.svg)](https://github.com/cytopia/docker-phpcbf/actions?query=workflow%3Alint)
+[![build](https://github.com/cytopia/docker-phpcbf/workflows/build/badge.svg)](https://github.com/cytopia/docker-phpcbf/actions?query=workflow%3Abuild)
+[![nightly](https://github.com/cytopia/docker-phpcbf/workflows/nightly/badge.svg)](https://github.com/cytopia/docker-phpcbf/actions?query=workflow%3Anightly)
+
+
 > #### All [#awesome-ci](https://github.com/topics/awesome-ci) Docker images
 >
-> [ansible][ansible-git-lnk] **•**
 > [ansible-lint][alint-git-lnk] **•**
+> [ansible][ansible-git-lnk] **•**
 > [awesome-ci][aci-git-lnk] **•**
+> [bandit][bandit-git-lnk] **•**
 > [black][black-git-lnk] **•**
 > [checkmake][cm-git-lnk] **•**
 > [eslint][elint-git-lnk] **•**
@@ -21,75 +23,124 @@
 > [goimports][gimp-git-lnk] **•**
 > [golint][glint-git-lnk] **•**
 > [jsonlint][jlint-git-lnk] **•**
+> [kubeval][kubeval-git-lnk] **•**
+> [linkcheck][linkcheck-git-lnk] **•**
+> [mypy][mypy-git-lnk] **•**
+> [php-cs-fixer][pcsf-git-lnk] **•**
 > [phpcbf][pcbf-git-lnk] **•**
 > [phpcs][pcs-git-lnk] **•**
 > [phplint][plint-git-lnk] **•**
-> [php-cs-fixer][pcsf-git-lnk] **•**
 > [pycodestyle][pycs-git-lnk] **•**
+> [pydocstyle][pyds-git-lnk] **•**
 > [pylint][pylint-git-lnk] **•**
 > [terraform-docs][tfdocs-git-lnk] **•**
-> [terragrunt][tg-git-lnk] **•**
 > [terragrunt-fmt][tgfmt-git-lnk] **•**
+> [terragrunt][tg-git-lnk] **•**
 > [yamlfmt][yfmt-git-lnk] **•**
 > [yamllint][ylint-git-lnk]
 
-> #### All [#awesome-ci](https://github.com/topics/awesome-ci) Makefiles
->
-> Visit **[cytopia/makefiles](https://github.com/cytopia/makefiles)** for seamless project integration, minimum required best-practice code linting and CI.
+View **[Dockerfiles](https://github.com/cytopia/docker-phpcbf/blob/master/Dockerfiles/)** on GitHub.
 
-View **[Dockerfile](https://github.com/cytopia/docker-phpcbf/blob/master/Dockerfile)** on GitHub.
 
-[![Docker hub](http://dockeri.co/image/cytopia/phpcbf?&kill_cache=1)](https://hub.docker.com/r/cytopia/phpcbf)
+**Available Architectures:**  `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6`
 
 Tiny Alpine-based multistage-builld dockerized version of [phpcbf](https://github.com/squizlabs/PHP_CodeSniffer)<sup>[1]</sup>.
 The image is built nightly against multiple stable versions and pushed to Dockerhub.
 
 <sup>[1] Official project: https://github.com/squizlabs/PHP_CodeSniffer</sup>
 
+## :whale: Available Docker image versions
 
-## Available Docker image versions
+[![](https://img.shields.io/docker/pulls/cytopia/phpcbf.svg)](https://hub.docker.com/r/cytopia/phpcbf)
+[![Docker](https://badgen.net/badge/icon/:latest?icon=docker&label=cytopia/phpcbf)](https://hub.docker.com/r/cytopia/phpcbf)
 
-Docker images for PHP CodeSniffer come with all available PHP versions. In doubt use `latest` tag.
+#### Rolling releaess
 
-#### Latest stable phpcbf version
-| Docker tag      | phpcbf version         | PHP version           |
-|-----------------|-----------------------|-----------------------|
-| `latest`        | latest stable         | latest stable         |
-| `latest-php7.3` | latest stable         | latest stable `7.3.x` |
-| `latest-php7.2` | latest stable         | latest stable `7.2.x` |
-| `latest-php7.1` | latest stable         | latest stable `7.1.x` |
-| `latest-php7.0` | latest stable         | latest stable `7.0.x` |
-| `latest-php5.6` | latest stable         | latest stable `5.6.x` |
+The following Docker image tags are rolling releases and are built and updated every night.
 
-#### Latest stable phpcbf `3.x.x` version
-| Docker tag      | phpcbf version         | PHP version           |
-|-----------------|-----------------------|-----------------------|
-| `3`             | latest stable `3.x.x` | latest stable         |
-| `3-php7.3`      | latest stable `3.x.x` | latest stable `7.3.x` |
-| `3-php7.2`      | latest stable `3.x.x` | latest stable `7.2.x` |
-| `3-php7.1`      | latest stable `3.x.x` | latest stable `7.1.x` |
-| `3-php7.0`      | latest stable `3.x.x` | latest stable `7.0.x` |
-| `3-php5.6`      | latest stable `3.x.x` | latest stable `5.6.x` |
-
-#### Latest stable phpcbf `2.x.x` version
-| Docker tag      | phpcbf version         | PHP version           |
-|-----------------|-----------------------|-----------------------|
-| `2`             | latest stable `2.x.x` | latest stable         |
-| `2-php7.3`      | latest stable `2.x.x` | latest stable `7.3.x` |
-| `2-php7.2`      | latest stable `2.x.x` | latest stable `7.2.x` |
-| `2-php7.1`      | latest stable `2.x.x` | latest stable `7.1.x` |
-| `2-php7.0`      | latest stable `2.x.x` | latest stable `7.0.x` |
-| `2-php5.6`      | latest stable `2.x.x` | latest stable `5.6.x` |
+[![nightly](https://github.com/cytopia/docker-phpcbf/workflows/nightly/badge.svg)](https://github.com/cytopia/docker-phpcbf/actions?query=workflow%3Anightly)
 
 
-## Docker mounts
+| Docker Tag            | Git Ref      | PHPCBF       | PHP        | Available Architectures                      |
+|-----------------------|--------------|--------------|------------|----------------------------------------------|
+| **`latest`**          | master       | latest       | latest     | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `latest-php8.1`       | master       | latest       | **`8.1`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `latest-php8.0`       | master       | latest       | **`8.0`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `latest-php7.4`       | master       | latest       | **`7.4`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `latest-php7.3`       | master       | latest       | **`7.3`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `latest-php7.2`       | master       | latest       | **`7.2`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `latest-php7.1`       | master       | latest       | **`7.1`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `latest-php7.0`       | master       | latest       | **`7.0`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `latest-php5.6`       | master       | latest       | **`5.6`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+|                       |              |              |            |                                              |
+| **`3`**               | master       | **`3.x.x`**  | latest     | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `3-php8.1`            | master       | **`3.x.x`**  | **`8.1`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `3-php8.0`            | master       | **`3.x.x`**  | **`8.0`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `3-php7.4`            | master       | **`3.x.x`**  | **`7.4`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `3-php7.3`            | master       | **`3.x.x`**  | **`7.3`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `3-php7.2`            | master       | **`3.x.x`**  | **`7.2`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `3-php7.1`            | master       | **`3.x.x`**  | **`7.1`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `3-php7.0`            | master       | **`3.x.x`**  | **`7.0`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `3-php5.6`            | master       | **`3.x.x`**  | **`5.6`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+|                       |              |              |            |                                              |
+| **`2`**               | master       | **`2.x.x`**  | latest     | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `2-php8.1`            | master       | **`2.x.x`**  | **`8.1`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `2-php8.0`            | master       | **`2.x.x`**  | **`8.0`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `2-php7.4`            | master       | **`2.x.x`**  | **`7.4`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `2-php7.3`            | master       | **`2.x.x`**  | **`7.3`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `2-php7.2`            | master       | **`2.x.x`**  | **`7.2`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `2-php7.1`            | master       | **`2.x.x`**  | **`7.1`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `2-php7.0`            | master       | **`2.x.x`**  | **`7.0`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `2-php5.6`            | master       | **`2.x.x`**  | **`5.6`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
 
-The working directory inside the Docker container is **`/data/`** and should be mounted locally to
-the root of your project.
+#### Point in time releases
+
+The following Docker image tags are built once and can be used for reproducible builds. Its version never changes so you will have to update tags in your pipelines from time to time in order to stay up-to-date.
+
+[![build](https://github.com/cytopia/docker-phpcbf/workflows/build/badge.svg)](https://github.com/cytopia/docker-phpcbf/actions?query=workflow%3Abuild)
 
 
-## Usage
+| Docker Tag            | Git Ref      | PHPCBF       | PHP        | Available Architectures                      |
+|-----------------------|--------------|--------------|------------|----------------------------------------------|
+| **`latest-<tag>`**    | git: `<tag>` | latest       | latest     | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `latest-php8.1-<tag>` | git: `<tag>` | latest       | **`8.1`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `latest-php8.0-<tag>` | git: `<tag>` | latest       | **`8.0`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `latest-php7.4-<tag>` | git: `<tag>` | latest       | **`7.4`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `latest-php7.3-<tag>` | git: `<tag>` | latest       | **`7.3`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `latest-php7.2-<tag>` | git: `<tag>` | latest       | **`7.2`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `latest-php7.1-<tag>` | git: `<tag>` | latest       | **`7.1`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `latest-php7.0-<tag>` | git: `<tag>` | latest       | **`7.0`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `latest-php5.6-<tag>` | git: `<tag>` | latest       | **`5.6`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+|                       | git: `<tag>` |              |            |                                              |
+| **`3-<tag>`**         | git: `<tag>` | **`3.x.x`**  | latest     | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `3-php8.1-<tag>`      | git: `<tag>` | **`3.x.x`**  | **`8.1`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `3-php8.0-<tag>`      | git: `<tag>` | **`3.x.x`**  | **`8.0`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `3-php7.4-<tag>`      | git: `<tag>` | **`3.x.x`**  | **`7.4`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `3-php7.3-<tag>`      | git: `<tag>` | **`3.x.x`**  | **`7.3`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `3-php7.2-<tag>`      | git: `<tag>` | **`3.x.x`**  | **`7.2`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `3-php7.1-<tag>`      | git: `<tag>` | **`3.x.x`**  | **`7.1`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `3-php7.0-<tag>`      | git: `<tag>` | **`3.x.x`**  | **`7.0`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `3-php5.6-<tag>`      | git: `<tag>` | **`3.x.x`**  | **`5.6`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+|                       | git: `<tag>` |              |            |                                              |
+| **`2-<tag>`**         | git: `<tag>` | **`2.x.x`**  | latest     | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `2-php8.1-<tag>`      | git: `<tag>` | **`2.x.x`**  | **`8.1`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `2-php8.0-<tag>`      | git: `<tag>` | **`2.x.x`**  | **`8.0`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `2-php7.4-<tag>`      | git: `<tag>` | **`2.x.x`**  | **`7.4`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `2-php7.3-<tag>`      | git: `<tag>` | **`2.x.x`**  | **`7.3`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `2-php7.2-<tag>`      | git: `<tag>` | **`2.x.x`**  | **`7.2`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `2-php7.1-<tag>`      | git: `<tag>` | **`2.x.x`**  | **`7.1`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `2-php7.0-<tag>`      | git: `<tag>` | **`2.x.x`**  | **`7.0`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
+| `2-php5.6-<tag>`      | git: `<tag>` | **`2.x.x`**  | **`5.6`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
 
+> Where `<tag>` refers to the chosen git tag from this repository.
+
+
+## :open_file_folder: Docker mounts
+
+The working directory inside the Docker container is **`/data/`** and should be mounted locally.
+
+
+## :computer: Usage
 
 ```bash
 $ docker run --rm -v $(pwd):/data cytopia/phpcbf .
@@ -109,7 +160,7 @@ PHPCBF CAN FIX THE 3 MARKED SNIFF VIOLATIONS AUTOMATICALLY
 ```
 
 
-## Related [#awesome-ci](https://github.com/topics/awesome-ci) projects
+## :arrows_counterclockwise: Related [#awesome-ci](https://github.com/topics/awesome-ci) projects
 
 ### Docker images
 
@@ -120,6 +171,7 @@ linter below for reproducible local or remote CI tests:
 |--------|-----------|------|-------------|
 | [awesome-ci][aci-git-lnk]        | [![aci-hub-img]][aci-hub-lnk]         | Basic      | Tools for git, file and static source code analysis |
 | [file-lint][flint-git-lnk]       | [![flint-hub-img]][flint-hub-lnk]     | Basic      | Baisc source code analysis |
+| [linkcheck][linkcheck-git-lnk]   | [![linkcheck-hub-img]][flint-hub-lnk] | Basic      | Search for URLs in files and validate their HTTP status code |
 | [ansible][ansible-git-lnk]       | [![ansible-hub-img]][ansible-hub-lnk] | Ansible    | Multiple versions and flavours of Ansible |
 | [ansible-lint][alint-git-lnk]    | [![alint-hub-img]][alint-hub-lnk]     | Ansible    | Lint Ansible |
 | [gofmt][gfmt-git-lnk]            | [![gfmt-hub-img]][gfmt-hub-lnk]       | Go         | Format Go source code **<sup>[1]</sup>** |
@@ -127,13 +179,17 @@ linter below for reproducible local or remote CI tests:
 | [golint][glint-git-lnk]          | [![glint-hub-img]][glint-hub-lnk]     | Go         | Lint Go code |
 | [eslint][elint-git-lnk]          | [![elint-hub-img]][elint-hub-lnk]     | Javascript | Lint Javascript code |
 | [jsonlint][jlint-git-lnk]        | [![jlint-hub-img]][jlint-hub-lnk]     | JSON       | Lint JSON files **<sup>[1]</sup>** |
+| [kubeval][kubeval-git-lnk]       | [![kubeval-hub-img]][kubeval-hub-lnk] | K8s        | Lint Kubernetes files |
 | [checkmake][cm-git-lnk]          | [![cm-hub-img]][cm-hub-lnk]           | Make       | Lint Makefiles |
 | [phpcbf][pcbf-git-lnk]           | [![pcbf-hub-img]][pcbf-hub-lnk]       | PHP        | PHP Code Beautifier and Fixer |
 | [phpcs][pcs-git-lnk]             | [![pcs-hub-img]][pcs-hub-lnk]         | PHP        | PHP Code Sniffer |
 | [phplint][plint-git-lnk]         | [![plint-hub-img]][plint-hub-lnk]     | PHP        | PHP Code Linter **<sup>[1]</sup>** |
 | [php-cs-fixer][pcsf-git-lnk]     | [![pcsf-hub-img]][pcsf-hub-lnk]       | PHP        | PHP Coding Standards Fixer |
+| [bandit][bandit-git-lnk]         | [![bandit-hub-img]][bandit-hub-lnk]   | Python     | A security linter from PyCQA
 | [black][black-git-lnk]           | [![black-hub-img]][black-hub-lnk]     | Python     | The uncompromising Python code formatter |
+| [mypy][mypy-git-lnk]             | [![mypy-hub-img]][mypy-hub-lnk]       | Python     | Static source code analysis |
 | [pycodestyle][pycs-git-lnk]      | [![pycs-hub-img]][pycs-hub-lnk]       | Python     | Python style guide checker |
+| [pydocstyle][pyds-git-lnk]       | [![pyds-hub-img]][pyds-hub-lnk]       | Python     | Python docstyle checker |
 | [pylint][pylint-git-lnk]         | [![pylint-hub-img]][pylint-hub-lnk]   | Python     | Python source code, bug and quality checker |
 | [terraform-docs][tfdocs-git-lnk] | [![tfdocs-hub-img]][tfdocs-hub-lnk]   | Terraform  | Terraform doc generator (TF 0.12 ready) **<sup>[1]</sup>** |
 | [terragrunt][tg-git-lnk]         | [![tg-hub-img]][tg-hub-lnk]           | Terraform  | Terragrunt and Terraform |
@@ -151,6 +207,10 @@ linter below for reproducible local or remote CI tests:
 [flint-hub-img]: https://img.shields.io/docker/pulls/cytopia/file-lint.svg
 [flint-hub-lnk]: https://hub.docker.com/r/cytopia/file-lint
 
+[linkcheck-git-lnk]: https://github.com/cytopia/docker-linkcheck
+[linkcheck-hub-img]: https://img.shields.io/docker/pulls/cytopia/linkcheck.svg
+[linkcheck-hub-lnk]: https://hub.docker.com/r/cytopia/linkcheck
+
 [jlint-git-lnk]: https://github.com/cytopia/docker-jsonlint
 [jlint-hub-img]: https://img.shields.io/docker/pulls/cytopia/jsonlint.svg
 [jlint-hub-lnk]: https://hub.docker.com/r/cytopia/jsonlint
@@ -162,6 +222,10 @@ linter below for reproducible local or remote CI tests:
 [alint-git-lnk]: https://github.com/cytopia/docker-ansible-lint
 [alint-hub-img]: https://img.shields.io/docker/pulls/cytopia/ansible-lint.svg
 [alint-hub-lnk]: https://hub.docker.com/r/cytopia/ansible-lint
+
+[kubeval-git-lnk]: https://github.com/cytopia/docker-kubeval
+[kubeval-hub-img]: https://img.shields.io/docker/pulls/cytopia/kubeval.svg
+[kubeval-hub-lnk]: https://hub.docker.com/r/cytopia/kubeval
 
 [gfmt-git-lnk]: https://github.com/cytopia/docker-gofmt
 [gfmt-hub-img]: https://img.shields.io/docker/pulls/cytopia/gofmt.svg
@@ -199,13 +263,25 @@ linter below for reproducible local or remote CI tests:
 [pcsf-hub-img]: https://img.shields.io/docker/pulls/cytopia/php-cs-fixer.svg
 [pcsf-hub-lnk]: https://hub.docker.com/r/cytopia/php-cs-fixer
 
+[bandit-git-lnk]: https://github.com/cytopia/docker-bandit
+[bandit-hub-img]: https://img.shields.io/docker/pulls/cytopia/bandit.svg
+[bandit-hub-lnk]: https://hub.docker.com/r/cytopia/bandit
+
 [black-git-lnk]: https://github.com/cytopia/docker-black
 [black-hub-img]: https://img.shields.io/docker/pulls/cytopia/black.svg
 [black-hub-lnk]: https://hub.docker.com/r/cytopia/black
 
+[mypy-git-lnk]: https://github.com/cytopia/docker-mypy
+[mypy-hub-img]: https://img.shields.io/docker/pulls/cytopia/mypy.svg
+[mypy-hub-lnk]: https://hub.docker.com/r/cytopia/mypy
+
 [pycs-git-lnk]: https://github.com/cytopia/docker-pycodestyle
 [pycs-hub-img]: https://img.shields.io/docker/pulls/cytopia/pycodestyle.svg
 [pycs-hub-lnk]: https://hub.docker.com/r/cytopia/pycodestyle
+
+[pyds-git-lnk]: https://github.com/cytopia/docker-pydocstyle
+[pyds-hub-img]: https://img.shields.io/docker/pulls/cytopia/pydocstyle.svg
+[pyds-hub-lnk]: https://hub.docker.com/r/cytopia/pydocstyle
 
 [pylint-git-lnk]: https://github.com/cytopia/docker-pylint
 [pylint-hub-img]: https://img.shields.io/docker/pulls/cytopia/pylint.svg
@@ -238,7 +314,8 @@ Visit **[cytopia/makefiles](https://github.com/cytopia/makefiles)** for dependen
 The provided Makefiles will only require GNU Make and Docker itself removing the need to install anything else.
 
 
-## License
+## :page_facing_up: License
+
 
 **[MIT License](LICENSE)**
 
