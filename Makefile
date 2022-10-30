@@ -182,7 +182,7 @@ _test-phpcbf-version:
 		fi; \
 	else \
 		echo "Testing for tag: $(PBF_VERSION).x.x"; \
-		if ! docker run --rm --platform $(ARCH) $(IMAGE):$(DOCKER_TAG) --version | grep -E "^PHP_CodeSniffer[[:space:]]+version[[:space:]]+v?$(PHPCBF)\.[.0-9]+"; then \
+		if ! docker run --rm --platform $(ARCH) $(IMAGE):$(DOCKER_TAG) --version | grep -E "^PHP_CodeSniffer[[:space:]]+version[[:space:]]+v?$(PBF_VERSION)\.[.0-9]+"; then \
 			echo "Failed"; \
 			exit 1; \
 		fi; \
