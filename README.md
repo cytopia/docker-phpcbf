@@ -111,7 +111,7 @@ The following Docker image tags are built once and can be used for reproducible 
 | `latest-php7.1-<tag>` | git: `<tag>` | latest       | **`7.1`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
 | `latest-php7.0-<tag>` | git: `<tag>` | latest       | **`7.0`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
 | `latest-php5.6-<tag>` | git: `<tag>` | latest       | **`5.6`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
-|                       | git: `<tag>` |              |            |                                              |
+|                       |              |              |            |                                              |
 | **`3-<tag>`**         | git: `<tag>` | **`3.x.x`**  | latest     | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
 | `3-php8.1-<tag>`      | git: `<tag>` | **`3.x.x`**  | **`8.1`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
 | `3-php8.0-<tag>`      | git: `<tag>` | **`3.x.x`**  | **`8.0`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
@@ -121,7 +121,7 @@ The following Docker image tags are built once and can be used for reproducible 
 | `3-php7.1-<tag>`      | git: `<tag>` | **`3.x.x`**  | **`7.1`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
 | `3-php7.0-<tag>`      | git: `<tag>` | **`3.x.x`**  | **`7.0`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
 | `3-php5.6-<tag>`      | git: `<tag>` | **`3.x.x`**  | **`5.6`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
-|                       | git: `<tag>` |              |            |                                              |
+|                       |              |              |            |                                              |
 | **`2-<tag>`**         | git: `<tag>` | **`2.x.x`**  | latest     | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
 | `2-php8.1-<tag>`      | git: `<tag>` | **`2.x.x`**  | **`8.1`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
 | `2-php8.0-<tag>`      | git: `<tag>` | **`2.x.x`**  | **`8.0`**  | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6` |
