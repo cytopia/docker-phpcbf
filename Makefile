@@ -37,7 +37,7 @@ ifeq ($(strip $(VERSION)),latest)
 	PBF_VERSION = latest
 else
 	PHP_VERSION = $(subst PHP-,,$(shell echo "$(VERSION)" | grep -Eo 'PHP-([.0-9]+|latest)'))
-	PBF_VERSION = $(subst PCS-,,$(shell echo "$(VERSION)" | grep -Eo 'PCS-([.0-9]+|latest)'))
+	PBF_VERSION = $(subst PBF-,,$(shell echo "$(VERSION)" | grep -Eo 'PBF-([.0-9]+|latest)'))
 endif
 
 # Building from master branch: Tag == 'latest'
