@@ -16,6 +16,8 @@ include $(MAKEFILES)
 # Set default Target
 .DEFAULT_GOAL := help
 
+DOCKER_PULL_VARIABLES = PHP_IMG_TAG=$(PHP_IMG_TAG)
+
 
 # -------------------------------------------------------------------------------------------------
 # Default configuration
@@ -35,9 +37,16 @@ DIR        = Dockerfiles
 ifeq ($(strip $(VERSION)),latest)
 	PHP_VERSION = latest
 	PBF_VERSION = latest
+	PHP_IMG_TAG = "cli-alpine"
 else
 	PHP_VERSION = $(subst PHP-,,$(shell echo "$(VERSION)" | grep -Eo 'PHP-([.0-9]+|latest)'))
 	PBF_VERSION = $(subst PBF-,,$(shell echo "$(VERSION)" | grep -Eo 'PBF-([.0-9]+|latest)'))
+	PHP_IMG_TAG = $(PHP_VERSION)-cli-alpine
+endif
+
+# Extract Image version
+ifeq ($(strip $(PHP_VERSION)),latest)
+	PHP_IMG_TAG = "cli-alpine"
 endif
 
 # Building from master branch: Tag == 'latest'
@@ -89,10 +98,6 @@ FL_IGNORES  = .git/,.github/,tests/
 SC_IGNORES  = .git/,.github/,tests/
 JL_IGNORES  = .git/,.github/,./tests/
 
-out:
-	@echo "PHP: $(subst PHP-,,$(shell echo "$(VERSION)" | grep -Eo 'PHP-[.0-9]+'))"
-	@echo "PCS: $(subst PCS-,,$(shell echo "$(VERSION)" | grep -Eo 'PCS-[.0-9]+'))"
-
 
 # -------------------------------------------------------------------------------------------------
 #  Default Target
@@ -113,28 +118,16 @@ help:
 
 
 # -------------------------------------------------------------------------------------------------
-#  Target Overrides
-# -------------------------------------------------------------------------------------------------
-.PHONY: docker-pull-base-image
-docker-pull-base-image:
-	@echo "################################################################################"
-	@echo "# Pulling Base Image php:$(PHP_VERSION) (platform: $(ARCH))"
-	@echo "################################################################################"
-	@echo "docker pull --platform $(ARCH) php:$(PHP_VERSION)"; \
-	while ! docker pull --platform $(ARCH) php:$(PHP_VERSION); do sleep 1; done \
-
-
-# -------------------------------------------------------------------------------------------------
 #  Docker Targets
 # -------------------------------------------------------------------------------------------------
 .PHONY: build
 build: ARGS+=--build-arg PBF_VERSION=$(PBF_VERSION)
-build: ARGS+=--build-arg PHP_VERSION=$(PHP_VERSION)
+build: ARGS+=--build-arg PHP_IMG_TAG=$(PHP_IMG_TAG)
 build: docker-arch-build
 
 .PHONY: rebuild
 rebuild: ARGS+=--build-arg PBF_VERSION=$(PBF_VERSION)
-rebuild: ARGS+=--build-arg PHP_VERSION=$(PHP_VERSION)
+rebuild: ARGS+=--build-arg PHP_IMG_TAG=$(PHP_IMG_TAG)
 rebuild: docker-arch-rebuild
 
 .PHONY: push
@@ -224,7 +217,7 @@ _test-run:
 .PHONY: _get-php-version
 _get-php-version:
 	$(eval CURRENT_PHP_VERSION = $(shell \
-		if [ "$(PHP)" = "latest" ]; then \
+		if [ "$(PHP_VERSION)" = "latest" ]; then \
 			curl -L -sS https://hub.docker.com/api/content/v1/products/images/php \
 				| tac | tac \
 				| grep -Eo '`[.0-9]+-cli-alpine' \
@@ -232,6 +225,6 @@ _get-php-version:
 				| sort -u \
 				| tail -1; \
 		else \
-			echo $(PHP); \
+			echo $(PHP_VERSION); \
 		fi; \
 	))
